@@ -1,0 +1,126 @@
+# ========================================
+# CIRCLESPACE - ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ
+# ========================================
+# Скопируйте этот файл в .env и заполните своими данными
+
+# ========================================
+# СЕРВЕР
+# ========================================
+PORT=5000
+NODE_ENV=development
+CLIENT_URL=http://localhost:3000
+
+# ========================================
+# MONGODB
+# ========================================
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/circlespace?retryWrites=true&w=majority
+
+# ========================================
+# REDIS (для кеша и онлайн-статусов)
+# ========================================
+REDIS_URL=redis://localhost:6379
+# Или Redis Cloud:
+# REDIS_URL=redis://username:password@hostname:port
+
+# ========================================
+# JWT (токены авторизации)
+# ========================================
+JWT_SECRET=your_super_secret_jwt_key_here_minimum_32_characters_long
+JWT_EXPIRE=7d
+
+# ========================================
+# CLOUDINARY (хранение файлов)
+# ========================================
+# Регистрация: https://cloudinary.com
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# ========================================
+# EMAIL (верификация через email)
+# ========================================
+# Для Gmail:
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_app_password
+# Получить App Password: https://myaccount.google.com/apppasswords
+
+# Для других провайдеров:
+# SMTP_HOST=smtp.mail.ru
+# SMTP_PORT=465
+# SMTP_SECURE=true
+
+# ========================================
+# SMS (верификация через телефон)
+# ========================================
+# Опционально - выберите провайдера:
+
+# Twilio (https://www.twilio.com)
+TWILIO_ACCOUNT_SID=your_account_sid
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_PHONE_NUMBER=+1234567890
+
+# Или другой SMS провайдер
+# SMS_API_KEY=your_sms_api_key
+# SMS_API_URL=https://sms-provider.com/api
+
+# ========================================
+# ADMIN
+# ========================================
+# Email первого администратора
+ADMIN_EMAIL=admin@circlespace.com
+ADMIN_PASSWORD=change_this_password_immediately
+
+# ========================================
+# БЕЗОПАСНОСТЬ
+# ========================================
+# Лимиты для защиты от спама
+RATE_LIMIT_WINDOW=15
+RATE_LIMIT_MAX_REQUESTS=100
+
+# Автобан после количества жалоб
+AUTO_BAN_REPORTS_THRESHOLD=3
+
+# ========================================
+# ФАЙЛЫ И МЕДИА
+# ========================================
+# Максимальные размеры (в МБ)
+MAX_IMAGE_SIZE=5
+MAX_VOICE_SIZE=2
+MAX_VIDEO_SIZE=10
+
+# Лимиты
+MAX_IMAGES_PER_POST=5
+MAX_VOICE_DURATION=60
+MAX_VIDEO_DURATION=30
+
+# ========================================
+# РЕФЕРАЛЬНАЯ СИСТЕМА
+# ========================================
+REFERRAL_BONUS_ENABLED=true
+REFERRAL_BONUS_POINTS=10
+
+# ========================================
+# WEBRTC (для звонков)
+# ========================================
+# PeerJS сервер (опционально, можно использовать публичный)
+PEER_SERVER_HOST=0.peerjs.com
+PEER_SERVER_PORT=443
+PEER_SERVER_PATH=/
+
+# ========================================
+# ДОПОЛНИТЕЛЬНО
+# ========================================
+# Логирование
+LOG_LEVEL=info
+
+# Временная зона
+TZ=Europe/Moscow
+
+# ========================================
+# PRODUCTION (для деплоя)
+# ========================================
+# При деплое на Railway/Render установите:
+# NODE_ENV=production
+# CLIENT_URL=https://your-frontend-domain.com

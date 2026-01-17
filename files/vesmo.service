@@ -1,0 +1,23 @@
+[Unit]
+Description=CircleSpace Backend Server
+Documentation=https://github.com/yourusername/circlespace
+After=network.target mongod.service redis.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/var/www/backend
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /var/www/backend/server.js
+Restart=on-failure
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=circlespace
+
+# Ограничения ресурсов (опционально)
+LimitNOFILE=65536
+MemoryLimit=1G
+
+[Install]
+WantedBy=multi-user.target
